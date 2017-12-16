@@ -47,3 +47,7 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+
+# the booking gems 
+gem 'acts_as_bookable'
