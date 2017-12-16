@@ -51,3 +51,4 @@ end
 
 # the booking gems 
 gem 'acts_as_bookable'
+gem 'stripe-rails'
