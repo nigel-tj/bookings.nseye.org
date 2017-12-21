@@ -47,7 +47,17 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
+# the poltegerist testing gem 
+group :test do
+  gem "connection_pool"
+  gem "launchy"
+  gem "minitest-reporters"
+  gem "mocha"
+  gem "poltergeist"
+  gem "shoulda-context"
+  gem "shoulda-matchers", ">= 3.0.1"
+ 
+end
 
 # the booking gems 
 gem 'acts_as_bookable'
