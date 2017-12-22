@@ -8,3 +8,21 @@ one:
 two:
   name: MyString
   number: 1
+
+standard:
+  name: Standard Room
+  number: 2
+  price: 150
+  status: 1
+
+family:
+  name: Family Room
+  number: 3
+  price: 250
+  status: 1
+
+suite: 
+  name: Suite
+  number: 5
+  price: 750
+  status: 0

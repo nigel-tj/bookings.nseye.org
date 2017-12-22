@@ -9,3 +9,17 @@ user:
   email: user@gmail.com
   encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
   role: 0
+
+
+# john:
+#   name: john 
+#   email: j@gmail.com
+#   encrypted_password: <% User.new.send(:password_digest,"topsecret") %>
+#   role: 0
+
+# nigel: 
+#   name: nigel
+#   email: n@gmail.com
+#   # encrypted_password: <% User.new.send(:password_digest, "topsecret")
+#   role: 1 
+  

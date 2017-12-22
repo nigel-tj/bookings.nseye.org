@@ -11,15 +11,33 @@ require 'minitest/reporters'
 reporter_options = { color: true}
 Minitest::Reporters.use!( Minitest::Reporters::DefaultReporter.new(reporter_options), ENV, Minitest.backtrace_filter )
 
+require "capybara/poltergeist"
+
+
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 
   # -- they do not yet inherit this setting
   fixtures :all
+ 
 
   # Add more helper methods to be used by all tests here...
   #
+  def simple_log_in_as(user)
+    fill_in 'Email' , with: user.email
+    fill_in 'Password' , with: "topsecret"
+    click_button "Sign in"
+    
+  end
+  # the user sign in helper
+  def sign_in_as(user)
+    visit  '/'
+    click_link 'Sign in'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'topsecret'
+    click_button "Sign in"  
+  end
 end
 
 #Capybara driver
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :poltergeist
