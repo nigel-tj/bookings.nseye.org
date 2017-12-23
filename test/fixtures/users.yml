@@ -2,7 +2,7 @@ admin:
   name:  Almighty Admin
   email: admin@gmail.com
   encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
-  role: 1
+  role: 2
 
 user:
   name: Simple User
@@ -10,6 +10,11 @@ user:
   encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
   role: 0
 
+receptionist:
+  name: receptionist User
+  email: receptionist@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  role: 1 
 
 # john:
 #   name: john 

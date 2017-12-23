@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  enum role: [:user, :admin]
+  enum role: [:user,:receptionist ,:admin]
   after_initialize :set_default_role, :if => :new_record?
   acts_as_booker
   def set_default_role
