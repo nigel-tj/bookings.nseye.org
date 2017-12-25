@@ -16,7 +16,8 @@ require "capybara/poltergeist"
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
-
+  include Capybara::DSL
+  include Capybara::Assertions
   # -- they do not yet inherit this setting
   fixtures :all
  
