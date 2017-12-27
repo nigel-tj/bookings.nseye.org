@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :visitors
   match '/contact' => 'visitors#contact', :via => :get
+  match '/tours' => 'visitors#tours', :via => :get
+  match '/about' => 'visitors#about', :via => :get
   root to: 'visitors#index'
 end

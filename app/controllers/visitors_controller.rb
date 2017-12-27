@@ -6,4 +6,8 @@ class VisitorsController < ApplicationController
   end
   def contact
   end
+  def about
+  end
+  def tours
+  end
 end
