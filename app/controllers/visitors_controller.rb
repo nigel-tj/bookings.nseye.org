@@ -4,4 +4,6 @@ class VisitorsController < ApplicationController
   def index
     @rooms = Room.all
   end
+  def contact
+  end
 end
