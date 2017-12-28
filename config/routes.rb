@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin_section/index'
+
   resources :charges , only: [:new , :create]
   get 'thanks' , to: 'charges#thanks' , as: 'thanks'
   resources :rooms
