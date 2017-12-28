@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Uploader::Engine => '/uploader'
   get 'admin_section/index'
 
   resources :charges , only: [:new , :create]

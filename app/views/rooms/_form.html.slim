@@ -2,6 +2,7 @@
   = f.error_notification
 
   .form-inputs
+    = f.input :pictures, as: :uploader, input_html: { sortable: true }
     = f.input :name
     = f.input :number
     = f.input :price
