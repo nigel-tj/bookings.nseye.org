@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-
+  layout "front_end"
   # GET /rooms
   # GET /rooms.json
   def index
@@ -69,6 +69,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :number)
+      params.require(:room).permit(:name, :number, :price)
     end
 end
