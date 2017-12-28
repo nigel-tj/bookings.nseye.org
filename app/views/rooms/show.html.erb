@@ -7,7 +7,8 @@
 	<div class="tm-banner-inner">
 	  <h1 class="tm-banner-title"><span class="tm-yellow-text">Tour</span> Packages</h1>
 	  <p class="tm-banner-subtitle">For Your Vacations</p>
-	  <a href="#more" class="tm-banner-link">Book Now</a>	
+	  <%= link_to "Book Now", room_booking_index_path(@room), method: :post , :class => "tm-banner-link" %>
+
 	</div>
 	<img src="/img/banner-3.jpg" />
       </li>
@@ -15,7 +16,8 @@
 	<div class="tm-banner-inner">
 	  <h1 class="tm-banner-title">Lorem <span class="tm-yellow-text">Ipsum</span> Dolor</h1>
 	  <p class="tm-banner-subtitle">Wonderful Destinations</p>
-	  <a href="#more" class="tm-banner-link">Take Up The Offer</a>	
+	  <%= link_to "Book Now", room_booking_index_path(@room), method: :post , :class => "tm-banner-link" %>
+
 	</div>
 	<img src="/img/banner-2.jpg" />
       </li>
@@ -23,7 +25,8 @@
 	<div class="tm-banner-inner">
 	  <h1 class="tm-banner-title">Proin <span class="tm-yellow-text">Gravida</span> Nibhvell</h1>
 	  <p class="tm-banner-subtitle">Velit Auctor</p>
-	  <a href="#more" class="tm-banner-link">Make A Reservation</a>	
+	 	  	  <%= link_to "Book Now", room_booking_index_path(@room), method: :post , :class => "tm-banner-link" %>
+
 	</div>
 	<img src="/img/banner-1.jpg" />
       </li>
