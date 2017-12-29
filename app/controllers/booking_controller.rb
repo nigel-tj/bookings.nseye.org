@@ -20,7 +20,7 @@ class BookingController < ApplicationController
     check_in_ok = Date.strptime(params[:check_in], "%m/%d/%Y") #Date.today.next_week + 4.days
     check_out_ok = Date.strptime(params[:check_out], "%m/%d/%Y")
         
-    current_user.book! @room , time_start: check_in_ok, time_end: check_out_ok
+    current_user.book! @room #, time_start: check_in_ok, time_end: check_out_ok
     
     redirect_to booking_index_path
   end
