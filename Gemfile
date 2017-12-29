@@ -62,3 +62,8 @@ end
 # the booking gems 
 gem 'acts_as_bookable'
 gem 'stripe'
+# the file uploader gem 
+gem 'dragonfly'
+group :production do
+  gem 'rack-cache', :require => 'rack/cache'
+end
