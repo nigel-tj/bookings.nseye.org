@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171228163255) do
-=======
-ActiveRecord::Schema.define(version: 20171229014559) do
->>>>>>> 6b878ed145fd5e9e98edffebb88bc4804a29e3d6
+ActiveRecord::Schema.define(version: 20171229141648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +47,27 @@ ActiveRecord::Schema.define(version: 20171229014559) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "data"
   end
 
   add_index "assets", ["assetable_type", "type", "assetable_id"], name: "index_assets_on_assetable_type_and_type_and_assetable_id", using: :btree
   add_index "assets", ["guid"], name: "index_assets_on_guid", using: :btree
   add_index "assets", ["public_token"], name: "index_assets_on_public_token", using: :btree
   add_index "assets", ["user_id"], name: "index_assets_on_user_id", using: :btree
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image_uid"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "room_galleries", force: :cascade do |t|
+    t.string   "image_uid"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
@@ -65,7 +76,6 @@ ActiveRecord::Schema.define(version: 20171229014559) do
     t.datetime "updated_at", null: false
     t.float    "price"
     t.integer  "status"
-    t.text     "schedule"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,4 +98,9 @@ ActiveRecord::Schema.define(version: 20171229014559) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "photos", "rooms"
 end
