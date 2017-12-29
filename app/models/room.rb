@@ -1,5 +1,5 @@
 class Room < ActiveRecord::Base
-     acts_as_bookable
+     acts_as_bookable time_type: :range #, bookable_across_occurrences: true
     
     #  the default booking status of a room
      enum status: [:booked , :open]

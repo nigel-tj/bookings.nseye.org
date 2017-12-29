@@ -38,20 +38,36 @@
 	  <img src="/img/about-1.jpg" alt="image" />
 	  <div class="flex-caption col-lg-6 col-md-6">
 	    <h2 class="slider-title">Booking for <%= @room.name %></h2>
-	    <h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor</h3>
+	    <h3 class="slider-subtitle">Some text might decide to change it</h3>
 	    <div class="col-lg-12 col-md-12">
 	      <!-- contact form -->
 	      <form action="/rooms/<%= @room.id%>/booking" method="post" class="tm-contact-form">
 		<div class="col-lg-12 col-md-12 tm-contact-form-input">
 		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
 		  <div class="form-group">
-		    <input type="text" id="contact_name" class="form-control" placeholder="NAME" />
+		    <input type="text" id="contact_name" class="form-control" placeholder="NAME"  value="<%= @current_user.name %>"/>
 		  </div>
 		  <div class="form-group">
-		    <input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
+		    <input type="email" id="contact_email" class="form-control" placeholder="EMAIL" value="<%= @current_user.email %>"/>
 		  </div>
 		  <div class="form-group">
 		    <input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
+		  </div>
+		  <div class="form-group">
+		    <div class='input-group date' id='datetimepicker1'>
+		      <input type='text' class="form-control" placeholder="Check-in Date" />
+		      <span class="input-group-addon">
+			<span class="fa fa-calendar"></span>
+		      </span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class='input-group date' id='datetimepicker2'>
+		      <input type='text' class="form-control" placeholder="Check-out Date" />
+		      <span class="input-group-addon">
+			<span class="fa fa-calendar"></span>
+		      </span>
+		    </div>
 		  </div>
 		  <div class="form-group">
 		    <textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE"></textarea>
@@ -164,36 +180,3 @@
     </div>			
   </div>
 </section>
-<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>					<!-- bootstrap js -->
-<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
-<script type="text/javascript" src="/js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
-<script>
-  $(function() {
-  
-  // https://css-tricks.com/snippets/jquery/smooth-scrolling/
-  $('a[href*=#]:not([href=#])').click(function() {
-  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-  var target = $(this.hash);
-  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  if (target.length) {
-  $('html,body').animate({
-  scrollTop: target.offset().top
-  }, 1000);
-  return false;
-  }
-  }
-  });		  	
-  });
-  $(window).load(function(){
-  // Flexsliders
-  $('.flexslider.flexslider-banner').flexslider({
-  controlNav: false
-  });
-  $('.flexslider').flexslider({
-  animation: "slide",
-  directionNav: false,
-  slideshow: false
-  });
-  });
-</script>
