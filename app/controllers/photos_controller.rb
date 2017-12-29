@@ -1,39 +1,25 @@
 class PhotosController < ApplicationController
-
   def index
     @photos = Photo.all
-    render :json => @photos.collect { |p| p.to_jq_upload }.to_json
+  end
+
+  def new
+    @photo = Photo.new
   end
 
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      respond_to do |format|
-        format.html {  
-          render :json => [@photo.to_jq_upload].to_json, 
-          :content_type => 'text/html',
-          :layout => false
-        }
-        format.json {  
-          render :json => [@photo.to_jq_upload].to_json			
-        }
-      end
-    else 
-      render :json => [{:error => "custom_failure"}], :status => 304
+      flash[:success] = "Photo saved!"
+      redirect_to photos_path
+    else
+      render 'new'
     end
   end
 
-  def destroy
-    @photo = Photo.find(params[:id])
-    @photo.destroy
-    render :json => true
-  end
-  
   private
-    def photo_params
-        params.require(:photo).permit(:image , :title)
-        
-    end
-  
-end
 
+  def photo_params
+    params.require(:photo).permit(:image, :title)
+  end
+end
