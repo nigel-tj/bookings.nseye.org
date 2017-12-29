@@ -14,11 +14,11 @@ class BookingController < ApplicationController
     @room = Room.find(params[:room_id])
     @room.schedule = IceCube::Schedule.new(Date.today, duration: 1.day)
     # This room is available every week, on weekends
-    @room.schedule.add_recurrence_rule IceCube::Rule.weekly.day(:friday,:saturday,:sunday)
+    #@room.schedule.add_recurrence_rule IceCube::Rule.weekly.day(:friday,:saturday,:sunday)
     @room.save!
-    # check-in Friday, check-out Sunday
-    check_in_ok = Date.today.next_week + 4.days
-    check_out_ok = check_in_ok + 2.days
+    
+    check_in_ok = Date.strptime(params[:check_in], "%m/%d/%Y") #Date.today.next_week + 4.days
+    check_out_ok = Date.strptime(params[:check_out], "%m/%d/%Y")
         
     current_user.book! @room , time_start: check_in_ok, time_end: check_out_ok
     
