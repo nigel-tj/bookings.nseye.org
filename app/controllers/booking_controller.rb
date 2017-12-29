@@ -17,7 +17,7 @@ class BookingController < ApplicationController
     check_in_ok = Date.today.next_week + 4.days
     check_out_ok = check_in_ok + 2.days
         
-    current_user.book! @room , time_start: check_in_ok, time_end: check_out_ok
+    current_user.book! @room #, time_start: check_in_ok, time_end: check_out_ok
     redirect_to booking_index_path
   end
 end
