@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
+  
+  get 'booking/new'
+
+  get 'booking/create'
+
+  # mount Uploader::Engine => '/uploader'
+
   get 'admin_section/index'
 
   resources :charges , only: [:new , :create]
   get 'thanks' , to: 'charges#thanks' , as: 'thanks'
+  
+  resources :booking
+  # the booking resource with rooms
+  resources :rooms do
+    resources :booking
+  end 
   resources :rooms
   devise_for :users
   resources :users
