@@ -1,8 +1,0 @@
-class Picture < Asset
-  mount_uploader :data, ImageUploader, mount_on: :data_file_name
-  validates :data, file_size: { maximum: 5.megabytes.to_i }
-
-  def thumb_url
-    url(:thumb)
-  end
-end

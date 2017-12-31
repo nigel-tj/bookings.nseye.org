@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-
+  
   get 'booking/new'
 
   get 'booking/create'
 
-  mount Uploader::Engine => '/uploader'
+  # mount Uploader::Engine => '/uploader'
 
   get 'admin_section/index'
 
