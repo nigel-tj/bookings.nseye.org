@@ -4,6 +4,7 @@ class BookingController < ApplicationController
   
   def index
     @user_bookings = current_user.bookings
+    
   end
   def new
     @room = Room.find(params[:room_id])

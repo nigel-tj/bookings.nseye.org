@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'user_home_section/index'
+
   get 'booking/new'
 
   get 'booking/create'
