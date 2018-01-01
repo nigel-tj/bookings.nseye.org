@@ -2,8 +2,7 @@ class Room < ActiveRecord::Base
 
      acts_as_bookable
 
-     has_many :pictures, as: :assetable, dependent: :destroy
-     fileuploads :picture
+
 
     #  the default booking status of a room
      enum status: [:booked , :open]
