@@ -1,6 +1,8 @@
 class Room < ActiveRecord::Base
-
-     acts_as_bookable
+    # the guest room and hotel association 
+    belongs_to :guesthouse
+    
+     acts_as_bookable time_type: :range
 
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229180550) do
+ActiveRecord::Schema.define(version: 20180101222509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20171229180550) do
   add_index "assets", ["public_token"], name: "index_assets_on_public_token", using: :btree
   add_index "assets", ["user_id"], name: "index_assets_on_user_id", using: :btree
 
+  create_table "guesthouses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.string   "image_uid"
     t.string   "title"
@@ -75,12 +82,15 @@ ActiveRecord::Schema.define(version: 20171229180550) do
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
     t.integer  "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.float    "price"
     t.integer  "status"
     t.text     "schedule"
+    t.integer  "guesthouse_id"
   end
+
+  add_index "rooms", ["guesthouse_id"], name: "index_rooms_on_guesthouse_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -103,4 +113,5 @@ ActiveRecord::Schema.define(version: 20171229180550) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "photos", "rooms"
+  add_foreign_key "rooms", "guesthouses"
 end
