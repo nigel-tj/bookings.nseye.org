@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # mount Uploader::Engine => '/uploader'
 
   get 'admin_section/index'
-
+  resources :photos, only: [:new, :create, :index , :destroy]
   resources :charges , only: [:new , :create]
   get 'thanks' , to: 'charges#thanks' , as: 'thanks'
   
