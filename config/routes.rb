@@ -7,7 +7,15 @@ Rails.application.routes.draw do
   get 'booking/create'
 
   # mount Uploader::Engine => '/uploader'
-
+  
+  # the guest house addition 
+  resources :guesthouses
+  
+  resources :guesthouses do 
+    resources :rooms
+  end
+  
+  # the room photo gallery
   get 'admin_section/index'
   resources :photos, only: [:new, :create, :index , :destroy]
   resources :charges , only: [:new , :create]

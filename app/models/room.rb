@@ -2,6 +2,8 @@ class Room < ActiveRecord::Base
     # the guest room and hotel association 
     belongs_to :guesthouse
     
+    has_many :photos
+    
      acts_as_bookable time_type: :range
 
 

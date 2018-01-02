@@ -5,6 +5,9 @@ class Photo < ActiveRecord::Base
     dragonfly_accessor :image
     # attr_accessible :image, :title
     
+    # the guesthouse addition 
+    belongs_to :guesthouses
+    
     validates :title, presence: true, length: {minimum: 2, maximum: 20}
 validates :image, presence: true
 

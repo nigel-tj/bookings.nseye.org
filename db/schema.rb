@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180101222509) do
-=======
-ActiveRecord::Schema.define(version: 20171229180550) do
->>>>>>> dragonfly_file_upload
+ActiveRecord::Schema.define(version: 20180101232759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,49 +31,6 @@ ActiveRecord::Schema.define(version: 20171229180550) do
 
   add_index "acts_as_bookable_bookings", ["bookable_type", "bookable_id"], name: "index_acts_as_bookable_bookings_bookable", using: :btree
   add_index "acts_as_bookable_bookings", ["booker_type", "booker_id"], name: "index_acts_as_bookable_bookings_booker", using: :btree
-<<<<<<< HEAD
-=======
-
-  create_table "assets", force: :cascade do |t|
-    t.string   "data_file_name",                           null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id",                             null: false
-    t.string   "assetable_type",    limit: 30,             null: false
-    t.string   "type",              limit: 30
-    t.string   "guid",              limit: 30
-    t.string   "public_token",      limit: 30
-    t.integer  "user_id"
-    t.integer  "sort_order",                   default: 0
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "data"
-  end
-
-  add_index "assets", ["assetable_type", "type", "assetable_id"], name: "index_assets_on_assetable_type_and_type_and_assetable_id", using: :btree
-  add_index "assets", ["guid"], name: "index_assets_on_guid", using: :btree
-  add_index "assets", ["public_token"], name: "index_assets_on_public_token", using: :btree
-  add_index "assets", ["user_id"], name: "index_assets_on_user_id", using: :btree
-
-  create_table "photos", force: :cascade do |t|
-    t.string   "image_uid"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "room_id"
-  end
-
-  add_index "photos", ["room_id"], name: "index_photos_on_room_id", using: :btree
-
-  create_table "room_galleries", force: :cascade do |t|
-    t.string   "image_uid"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 
   create_table "assets", force: :cascade do |t|
     t.string   "data_file_name",                           null: false
@@ -107,7 +60,10 @@ ActiveRecord::Schema.define(version: 20171229180550) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "guesthouses", ["user_id"], name: "index_guesthouses_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "image_uid"
@@ -159,8 +115,7 @@ ActiveRecord::Schema.define(version: 20171229180550) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "guesthouses", "users"
   add_foreign_key "photos", "rooms"
-
   add_foreign_key "rooms", "guesthouses"
-
 end
