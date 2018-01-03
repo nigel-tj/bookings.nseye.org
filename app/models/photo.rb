@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
     # attr_accessible :image, :title
     
     # the guesthouse addition 
-    belongs_to :guesthouses
+    belongs_to :rooms
     
     validates :title, presence: true, length: {minimum: 2, maximum: 20}
 validates :image, presence: true

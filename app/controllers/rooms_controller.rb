@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  layout "front_end"
+  before_action :set_guesthouse , only: [:new , :create]
+  
+  layout "front_end" , only: [:index , :show]
   # GET /rooms
   # GET /rooms.json
   def index
@@ -14,7 +16,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @room = Room.new
+    @room = @guesthouse.rooms.new
   end
 
   # GET /rooms/1/edit
@@ -24,11 +26,11 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = Room.new(room_params)
-    #@room.schedule = IceCube::Schedule.new
+    @room = @guesthouse.rooms.build(room_params)
+    @room.schedule = IceCube::Schedule.new
     respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to  new_room_photo_path(@room.id) , notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
@@ -66,9 +68,13 @@ class RoomsController < ApplicationController
     def set_room
       @room = Room.find(params[:id])
     end
-
+    
+    def set_guesthouse
+      @guesthouse = Guesthouse.find(params[:guesthouse_id])
+      
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :number, :price)
+      params.require(:room).permit(:name, :number, :price , :guesthouse_id)
     end
 end

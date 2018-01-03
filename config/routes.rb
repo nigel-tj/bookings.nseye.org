@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+
+
   get 'user_home_section/index'
 
   get 'booking/new'
@@ -15,9 +17,19 @@ Rails.application.routes.draw do
     resources :rooms
   end
   
+  
+  
   # the room photo gallery
+  
+  resources :rooms do 
+    resources :photos, only: [:new, :create, :index , :destroy]
+  end
+  
   get 'admin_section/index'
   resources :photos, only: [:new, :create, :index , :destroy]
+  
+  
+  
   resources :charges , only: [:new , :create]
   get 'thanks' , to: 'charges#thanks' , as: 'thanks'
   

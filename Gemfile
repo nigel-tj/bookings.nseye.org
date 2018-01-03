@@ -69,3 +69,6 @@ group :production do
   gem 'rack-cache', :require => 'rack/cache'
 end
 
+# The geocoder file driving the google places and uber integration 
+gem 'geocoder'
+
