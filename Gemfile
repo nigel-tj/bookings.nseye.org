@@ -71,4 +71,6 @@ end
 
 # The geocoder file driving the google places and uber integration 
 gem 'geocoder'
+# The google_place gem 
+gem 'google_places'
 
