@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102215346) do
+ActiveRecord::Schema.define(version: 20180105122039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,27 @@ ActiveRecord::Schema.define(version: 20180102215346) do
 
   add_index "rooms", ["guesthouse_id"], name: "index_rooms_on_guesthouse_id", using: :btree
 
+  create_table "trip_scheduals", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.float    "start_latitude"
+    t.float    "start_longitude"
+    t.float    "end_latitude"
+    t.float    "end_longitude"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "trip_scheduals", ["trip_id"], name: "index_trip_scheduals_on_trip_id", using: :btree
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.integer  "role"
@@ -120,4 +141,6 @@ ActiveRecord::Schema.define(version: 20180102215346) do
   add_foreign_key "guesthouses", "users"
   add_foreign_key "photos", "rooms"
   add_foreign_key "rooms", "guesthouses"
+  add_foreign_key "trip_scheduals", "trips"
+  add_foreign_key "trips", "users"
 end

@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
 
 
+  get 'trip_scheduals/index'
+
+  get 'trip_scheduals/new'
+
   get 'trips/index'
 
   get 'trips/new'
@@ -13,6 +17,12 @@ Rails.application.routes.draw do
   get 'booking/create'
 
   # mount Uploader::Engine => '/uploader'
+  
+  # The plan a trip routes 
+  resources :trips
+  resources :trips do 
+    resources :trip_scheduals
+  end
   
   # the guest house addition 
   resources :guesthouses
