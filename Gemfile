@@ -74,3 +74,6 @@ gem 'geocoder'
 # The google_place gem 
 gem 'google_places'
 
+# The uber api gem 
+gem 'uber-ruby', require: 'uber'
+

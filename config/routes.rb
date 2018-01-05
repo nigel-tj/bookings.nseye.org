@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
 
 
+  get 'trips/index'
+
+  get 'trips/new'
+
   get 'user_home_section/index'
 
   get 'booking/new'
