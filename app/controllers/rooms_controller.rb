@@ -28,6 +28,7 @@ class RoomsController < ApplicationController
   def create
     @room = @guesthouse.rooms.build(room_params)
     @room.schedule = IceCube::Schedule.new
+    @room.schedule.add_recurrence_rule IceCube::Rule.weekly.day(:monday , :tuesday , :wednesday, :thursday ,:friday,:saturday,:sunday)
     respond_to do |format|
       if @room.save
         format.html { redirect_to  new_room_photo_path(@room.id) , notice: 'Room was successfully created.' }
@@ -70,7 +71,12 @@ class RoomsController < ApplicationController
     end
     
     def set_guesthouse
-      @guesthouse = Guesthouse.find(params[:guesthouse_id])
+      if params[:guesthouse_id].nil?
+        @guesthouse = Guesthouse.first
+      else
+        @guesthouse = Guesthouse.find(params[:guesthouse_id])
+      end
+      
       
     end
     # Never trust parameters from the scary internet, only allow the white list through.
