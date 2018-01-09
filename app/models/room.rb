@@ -4,7 +4,7 @@ class Room < ActiveRecord::Base
     
     has_many :photos
     
-     acts_as_bookable time_type: :range
+     acts_as_bookable time_type: :none
 
 
 

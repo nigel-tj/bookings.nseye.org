@@ -27,8 +27,8 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = @guesthouse.rooms.build(room_params)
-    @room.schedule = IceCube::Schedule.new
-    @room.schedule.add_recurrence_rule IceCube::Rule.weekly.day(:monday , :tuesday , :wednesday, :thursday ,:friday,:saturday,:sunday)
+    # @room.schedule = IceCube::Schedule.new
+    # @room.schedule.add_recurrence_rule IceCube::Rule.weekly
     respond_to do |format|
       if @room.save
         format.html { redirect_to  new_room_photo_path(@room.id) , notice: 'Room was successfully created.' }
