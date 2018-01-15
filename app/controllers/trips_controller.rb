@@ -11,6 +11,22 @@ class TripsController < ApplicationController
     @uber_info = client.products(latitude: guesthouse.latitude , longitude: guesthouse.longitude)
   end
 
-  def new
+  def new 
   end
+  def create
+    user_booking_confirmation = ActsAsBookable::Booking.where(:booker_id => current_user.id).last
+    if user_booking_confirmation.nil?
+      redirect_to root_path 
+      flash[:notice] = "Please make a booking "
+    else
+      user_trip = Trip.new
+      user_trip.user_id = current_user.id
+      user_trip.booking_id = user_booking_confirmation.id 
+      user_trip.save!
+      redirect_to new_trip_trip_schedual_path(user_trip.id)
+    end
+    
+  end
+  
+  
 end
