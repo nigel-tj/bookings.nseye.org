@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   get 'booking/create'
 
   # mount Uploader::Engine => '/uploader'
-  
+  # the devise sign out bug fix
+  devise_scope :user do
+    get "sign_out", :to => "devise/sessions#destroy"
+  end
   # The plan a trip routes 
   resources :trips
   resources :trips do 
