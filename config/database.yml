@@ -2,18 +2,18 @@ default: &default
       adapter: postgresql
       encoding: unicode
       pool: 5
-      username: username
-      password: password
+      username: app
+      password: b00king1o1
       host:     localhost
 
 development:
   <<: *default
-  database: app_development
+  database: bookings
 
 test:
   <<: *default
-  database: app_test
+  database: booking_test
 
 production:
   <<: *default
-  database: app_production
+  database: bookings_production
