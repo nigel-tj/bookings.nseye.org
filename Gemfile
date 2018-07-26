@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-gem 'rails', '4.2.5'
-gem 'pg'
+gem 'rails'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -38,12 +38,7 @@ group :development do
   gem 'rails_best_practices'
   gem 'rails_apps_pages'
 end
-gem 'minitest-rails'
-group :test do
-  gem 'minitest-reporters'
-  gem 'minitest-rails-capybara'
-  gem 'faker'
-end
+
 group :production do
   gem 'rails_12factor'
 end
@@ -51,12 +46,15 @@ end
 group :test do
   gem "connection_pool"
   gem "launchy"
-  gem "minitest-reporters"
+  gem 'minitest-reporters'
+  gem 'minitest-rails-capybara'
+  gem 'faker'  
   gem "mocha"
   gem "poltergeist"
   gem "shoulda-context"
   gem "shoulda-matchers", ">= 3.0.1"
- 
+  gem 'sqlite3' 
+  gem 'minitest-rails'
 end
 
 # the booking gems 
@@ -77,3 +75,6 @@ gem 'google_places'
 # The uber api gem 
 gem 'uber-ruby', require: 'uber'
 
+gem 'rmagick'
+#gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'

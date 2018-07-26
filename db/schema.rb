@@ -13,16 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20180105122039) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "acts_as_bookable_bookings", force: :cascade do |t|
-    t.integer  "bookable_id"
-    t.string   "bookable_type"
-    t.integer  "booker_id"
-    t.string   "booker_type"
-    t.integer  "amount"
-    t.text     "schedule"
+    t.integer  "bookable_id",   limit: 4
+    t.string   "bookable_type", limit: 255
+    t.integer  "booker_id",     limit: 4
+    t.string   "booker_type",   limit: 255
+    t.integer  "amount",        limit: 4
+    t.text     "schedule",      limit: 65535
     t.datetime "time_start"
     t.datetime "time_end"
     t.datetime "time"
@@ -32,107 +29,77 @@ ActiveRecord::Schema.define(version: 20180105122039) do
   add_index "acts_as_bookable_bookings", ["bookable_type", "bookable_id"], name: "index_acts_as_bookable_bookings_bookable", using: :btree
   add_index "acts_as_bookable_bookings", ["booker_type", "booker_id"], name: "index_acts_as_bookable_bookings_booker", using: :btree
 
-  create_table "assets", force: :cascade do |t|
-    t.string   "data_file_name",                           null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id",                             null: false
-    t.string   "assetable_type",    limit: 30,             null: false
-    t.string   "type",              limit: 30
-    t.string   "guid",              limit: 30
-    t.string   "public_token",      limit: 30
-    t.integer  "user_id"
-    t.integer  "sort_order",                   default: 0
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "data"
-  end
-
-  add_index "assets", ["assetable_type", "type", "assetable_id"], name: "index_assets_on_assetable_type_and_type_and_assetable_id", using: :btree
-  add_index "assets", ["guid"], name: "index_assets_on_guid", using: :btree
-  add_index "assets", ["public_token"], name: "index_assets_on_public_token", using: :btree
-  add_index "assets", ["user_id"], name: "index_assets_on_user_id", using: :btree
-
   create_table "guesthouses", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.text     "address"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.string   "name",       limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id",    limit: 4
+    t.text     "address",    limit: 65535
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
   end
 
   add_index "guesthouses", ["user_id"], name: "index_guesthouses_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
-    t.string   "image_uid"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "room_id"
+    t.string   "image_uid",  limit: 255
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "room_id",    limit: 4
   end
 
   add_index "photos", ["room_id"], name: "index_photos_on_room_id", using: :btree
 
-  create_table "room_galleries", force: :cascade do |t|
-    t.string   "image_uid"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "rooms", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.float    "price"
-    t.integer  "status"
-    t.text     "schedule"
-    t.integer  "guesthouse_id"
+    t.string   "name",          limit: 255
+    t.integer  "number",        limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.float    "price",         limit: 53
+    t.integer  "status",        limit: 4
+    t.text     "schedule",      limit: 65535
+    t.integer  "guesthouse_id", limit: 4
   end
 
   add_index "rooms", ["guesthouse_id"], name: "index_rooms_on_guesthouse_id", using: :btree
 
   create_table "trip_scheduals", force: :cascade do |t|
-    t.integer  "trip_id"
-    t.float    "start_latitude"
-    t.float    "start_longitude"
-    t.float    "end_latitude"
-    t.float    "end_longitude"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "trip_id",         limit: 4
+    t.float    "start_latitude",  limit: 24
+    t.float    "start_longitude", limit: 24
+    t.float    "end_latitude",    limit: 24
+    t.float    "end_longitude",   limit: 24
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "trip_scheduals", ["trip_id"], name: "index_trip_scheduals_on_trip_id", using: :btree
 
   create_table "trips", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    limit: 4
+    t.integer  "booking_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "role"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "name",                   limit: 255
+    t.integer  "role",                   limit: 4
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
