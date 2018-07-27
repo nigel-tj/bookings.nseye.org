@@ -3,7 +3,7 @@
  * http://www.templatemo.com/tm-475-holiday
  *
  * COLOR CODES
- * Yellow	#FCDD44
+ * Yellow	#168fef
  *
  */
 
@@ -32,7 +32,7 @@ body { overflow-x: hidden; }
 }
 .tm-site-name-container { padding-top: 20px; }
 .tm-site-name {
-	color: #FCDD44;
+	color: #168fef;
 	font-size: 27px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -60,7 +60,7 @@ body { overflow-x: hidden; }
 .tm-nav li a.active,
 .tm-nav li a:focus,
 .tm-nav li a:hover {
-	background: #FCDD44;
+	background: #168fef;
 	color: #000;
 }
 
@@ -100,9 +100,9 @@ body { overflow-x: hidden; }
 	font-weight: 600;
 }
 .tm-banner-subtitle { font-size: 34px; }
-.tm-yellow-text { color: #FCDD44; }
+.tm-yellow-text { color: #168fef; }
 .tm-banner-link {
-	background: rgba(252, 221, 68, 0.39) none repeat scroll 0% 0%;
+	background: rgba(22, 143, 239, 0.39) none repeat scroll 0% 0%;
 	border: 1px solid #D2B731;
 	color: #FFF;
 	font-weight: 600;
@@ -113,7 +113,7 @@ body { overflow-x: hidden; }
 }
 .tm-banner-link:hover,
 .tm-banner-link:focus {
-	background: rgba(252, 221, 68, 1);
+	background: rgba(22, 143, 239, 1);
 	color: #000;
 }
 .flexslider.flexslider-banner {
@@ -125,7 +125,7 @@ body { overflow-x: hidden; }
 	text-align: center;
 }
 .flexslider.flexslider-banner .flex-direction-nav a:before {
-	color: #FCDD44;
+	color: #168fef;
 }
 .flex-direction-nav a {
 	height: 50px;
@@ -139,8 +139,8 @@ body { overflow-x: hidden; }
 }
 .form-control {	border-radius: 0; }
 .form-control:focus {
-	border-color: #FCDD44;
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(252, 221, 68, 0.6);
+	border-color: #168fef;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(22, 143, 239, 0.6);
 }
 .tm-yellow-gradient-bg {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5d11d+0,f3d10e+1,efcf1c+2,fccd0d+4,f7ca0d+5,f9cb1e+6,f7cb10+7,f8cc14+8,f0c40c+54,edc50c+55,e9c108+71,ecc008+78,e6be06+91,e9bd06+93,e8bc06+100 */
@@ -284,7 +284,7 @@ body { overflow-x: hidden; }
 	padding-bottom: 20px;
 }
 .tm-copyright-text a {
-	color: #FCDD44;
+	color: #168fef;
 }
 
 .tm-copyright-text a:hover {
@@ -333,7 +333,7 @@ hr { border-top: 1px solid #111010; }
 }
 .tm-home-box-2-link:hover,
 .tm-home-box-2-link:focus {
-	color: #FCDD44;
+	color: #168fef;
 }
 .border-left { border-left: 1px solid #DDD; }
 .border-right {	border-right: 1px solid #DDD; }
@@ -800,7 +800,7 @@ hr { border-top: 1px solid #111010; }
 	.mobile-menu-icon {
 	    display: block;
 	    cursor: pointer;
-	    color: #FCDD44;
+	    color: #168fef;
 	    font-size: 30px;
 	    position: fixed;
 	    top: 15px;
