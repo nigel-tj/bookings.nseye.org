@@ -1,163 +1,143 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= csrf_meta_tags %>
-    <title>Holiday - Booking</title>
-    <!--
-	Holiday Template
-	http://www.templatemo.com/tm-475-holiday
-      -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
-    <link href="/css/flexslider.css" rel="stylesheet">
-    <link href="/css/templatemo-style.css" rel="stylesheet">
+    <title>Rehoboth &mdash; Luxury Travel </title>
+    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:300,400,700|Rubik:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-merged.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+
     <!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-    
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
   </head>
+  <body>
+
+  <!-- START: header -->
+
+  <header role="banner" class="probootstrap-header">
+    <!-- <div class="container"> -->
+    <div class="row">
+        <a href="index.html" class="probootstrap-logo visible-xs"><img src="img/rehoboth-dummy.png" class="hires" width="120" height="33" alt="Free Bootstrap Template by uicookies.com"></a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rooms.html">Our Rooms</a></li>
+            <li class="hidden-xs probootstrap-logo-center"><a href="index.html"><img src="img/rehoboth-dummy.png" class="hires" width="181" height="50" alt="Free Bootstrap Template by uicookies.com"></a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="extra-text visible-xs">
+            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+            <h5>Connect With Us</h5>
+            <ul class="social-buttons">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook2"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+        </div>
+    <!-- </div> -->
+  </header>
+  <!-- END: header -->
   
-  <body class="tm-gray-bg">
-    <!-- Header -->
-    <div class="tm-header">
-      <div class="container">
-	<div class="row">
-	  <div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-  	    <a href="#" class="tm-site-name">Holiday</a>	
-	  </div>
-	  <div class="col-lg-6 col-md-8 col-sm-9">
-	    <div class="mobile-menu-icon">
-	      <i class="fa fa-bars"></i>
-	    </div>
-	    <nav class="tm-nav">
-	      <ul>
-		<li><a href="/" class="active">Home</a></li>
-		<li><a href="/about">About</a></li>
-		<li><a href="/contact">Contact</a></li>
-				<li><a href="/users/sign_in">Sign in </a></li>
-	      </ul>
-	    </nav>		
-	  </div>				
-	</div>
-      </div>	  	
-    </div>
-    
+  <%= yield %>
 
-    <%= yield %>
-    
-    <footer class="tm-black-bg">
-      <div class="container">
-	<div class="row">
-	  <p class="tm-copyright-text">Copyright &copy; 2014 NSeye Corp 
+ <!-- START: footer -->
+  <footer role="contentinfo" class="probootstrap-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="probootstrap-footer-widget">
+            <p class="mt40"><img src="img/rehoboth-dummy.png" class="hires" width="120" height="33" alt="Free HTML5 Bootstrap Template by uicookies.com"></p>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <p><a href="#" class="link-with-icon">Learn More <i class=" icon-chevron-right"></i></a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="probootstrap-footer-widget">
+            <h3>Blog</h3>
+            <ul class="probootstrap-blog-list">
+              <li>
+                <a href="#">
+                  <figure class="probootstrap-image"><img src="img/img_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                  <div class="probootstrap-text">
+                    <h4>River named Duden flows</h4>
+                    <span class="meta">August 2, 2017</span>
+                    <p>A small river named Duden flows by their place</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <figure class="probootstrap-image"><img src="img/img_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                  <div class="probootstrap-text">
+                    <h4>River named Duden flows</h4>
+                    <span class="meta">August 2, 2017</span>
+                    <p>A small river named Duden flows by their place</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <figure class="probootstrap-image"><img src="img/img_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                  <div class="probootstrap-text">
+                    <h4>River named Duden flows</h4>
+                    <span class="meta">August 2, 2017</span>
+                    <p>A small river named Duden flows by their place</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="probootstrap-footer-widget">
+            <h3>Contact</h3>
+            <ul class="probootstrap-contact-info">
+              <li><i class="icon-location2"></i> <span>198 West 21th Street, Suite 721 New York NY 10016</span></li>
+              <li><i class="icon-mail"></i><span>info@domain.com</span></li>
+              <li><i class="icon-phone2"></i><span>+123 456 7890</span></li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row mt40">
+        <div class="col-md-12 text-center">
+          <ul class="probootstrap-footer-social">
+            <li><a href=""><i class="icon-twitter"></i></a></li>
+            <li><a href=""><i class="icon-facebook"></i></a></li>
+            <li><a href=""><i class="icon-instagram2"></i></a></li>
+          </ul>
+          <p>
+            <small>&copy; 2017 <a href="https://uicookies.com/" target="_blank">uiCookies:Atlantis</a>. All Rights Reserved. <br> Designed &amp; Developed by <a href="https://uicookies.com/" target="_blank">uicookies.com</a> Demo Images: Unsplash.com &amp; Pexels.com</small>
+          </p>
           
-            | Designed by <a rel="nofollow" href="http://www.korujams.herokuapp.com" target="_parent">NSeye</a></p>
-	</div>
-      </div>		
-    </footer>
-    <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
-    <script type="text/javascript" src="/js/moment.js"></script>							<!-- moment.js -->
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>					<!-- bootstrap js -->
-    <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>	<!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
-    <script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
-    <!--
-	<script src="/js/froogaloop.js"></script>
-	<script src="/js/jquery.fitvid.js"></script>
-	-->
-    <script type="text/javascript" src="/js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
-    <script>
-      // HTML document is loaded. DOM is ready.
-      $(function() {
-      
-      $('#hotelCarTabs a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-      })
-      
-      $('.date').datetimepicker({
-      format: 'MM/DD/YYYY'
-    });
-      $('.date-time').datetimepicker();
-      
-    // https://css-tricks.com/snippets/jquery/smooth-scrolling/
-    $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-    $('html,body').animate({
-    scrollTop: target.offset().top
-    }, 1000);
-    return false;
-    }
-    }
-    });
-    });
-    
-    // Load Flexslider when everything is loaded.
-		$(window).load(function() {	  		
-    // Vimeo API nonsense
-    
-    /*
-    var player = document.getElementById('player_1');
-    $f(player).addEvent('ready', ready);
-    
-    function addEvent(element, eventName, callback) {
-    if (element.addEventListener) {
-    element.addEventListener(eventName, callback, false)
-    } else {
-    element.attachEvent(eventName, callback, false);
-    }
-    }
-    
-    function ready(player_id) {
-    var froogaloop = $f(player_id);
-			    froogaloop.addEvent('play', function(data) {
-    $('.flexslider').flexslider("pause");
-    });
-    froogaloop.addEvent('pause', function(data) {
-    $('.flexslider').flexslider("play");
-    });
-    }
-*/
-    
-    
-			 
-    // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-    /*
-    
-    $(".flexslider")
-    .fitVids()
-    .flexslider({
-    animation: "slide",
-    useCSS: false,
-    animationLoop: false,
-			      smoothHeight: true,
-    controlNav: false,
-    before: function(slider){
-    $f(player).api('pause');
-    }
-    });
-    */
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: footer -->
 
-    
-    
-    
-    //	For images only
-    $('.flexslider').flexslider({
-    controlNav: false
-    });
-    
-    
-	  	});
-  </script>
+  <script src="/js/scripts.min.js"></script>
+  <script src="/js/main.min.js"></script>
+  <script src="/js/custom.js"></script>
+
+
   </body>
 </html>

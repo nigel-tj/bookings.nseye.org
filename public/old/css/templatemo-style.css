@@ -143,10 +143,10 @@ body { overflow-x: hidden; }
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(22, 143, 239, 0.6);
 }
 .tm-yellow-gradient-bg {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5d11d+0,f3d10e+1,efcf1c+2,fccd0d+4,f7ca0d+5,f9cb1e+6,f7cb10+7,f8cc14+8,f0c40c+54,edc50c+55,e9c108+71,ecc008+78,e6be06+91,e9bd06+93,e8bc06+100 */
-	background: #f5d11d; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
-	background: linear-gradient(to bottom,  #f5d11d 0%,#f3d10e 1%,#efcf1c 2%,#fccd0d 4%,#f7ca0d 5%,#f9cb1e 6%,#f7cb10 7%,#f8cc14 8%,#f0c40c 54%,#edc50c 55%,#e9c108 71%,#ecc008 78%,#e6be06 91%,#e9bd06 93%,#e8bc06 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5d11d', endColorstr='#e8bc06',GradientType=0 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2d9af0+0,f3d10e+1,efcf1c+2,fccd0d+4,f7ca0d+5,f9cb1e+6,f7cb10+7,f8cc14+8,f0c40c+54,edc50c+55,e9c108+71,ecc008+78,e6be06+91,e9bd06+93,e8bc06+100 */
+	background: #2d9af0; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+	background: linear-gradient(to bottom,  #2d9af0 0%,#1380d7 1%,#168fef 2%,#44a5f2 4%,#d0e8fb 5%,#5bb0f3 6%,#8ac7f7 7%,#2d9af0 8%,#b9ddfa 54%,#edc50c 55%,#e9c108 71%,#ecc008 78%, 91%,#e9bd06 93%,#e8bc06 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d9af0', endColorstr='#e8bc06',GradientType=0 ); /* IE6-9 */
 }
 .tm-green-gradient-bg {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2ec66b+0,2dc970+1,2ac96c+2,2bc76e+4,2bc869+5,2ac871+6,29c86c+7,28c76b+15,2bc76c+16,21bb61+73,1eb860+100 */
@@ -194,7 +194,7 @@ body { overflow-x: hidden; }
 }
 .tm-yellow-btn:hover,
 .tm-yellow-btn:focus {
-	background-color: #F9E58B;
+	background-color: #168FEF;
 }
 .tm-form-inner { padding: 35px 30px 5px; }
 
@@ -257,7 +257,7 @@ body { overflow-x: hidden; }
 	padding-bottom: 15px;
 	text-align: center;
 	text-transform: uppercase;
-	background: transparent linear-gradient(to bottom, #F5D11D 0%, #F3D10E 1%, #EFCF1C 2%, #FCCD0D 4%, #F7CA0D 5%, #F9CB1E 6%, #F7CB10 7%, #F8CC14 8%, #F0C40C 54%, #EDC50C 55%, #E9C108 71%, #ECC008 78%, #E6BE06 91%, #E9BD06 93%, #E8BC06 100%) repeat scroll 0% 0%;
+	background: transparent linear-gradient(to bottom, #1172bf 0%, #1380D7 1%, #168FEF 2%, #44A5F2 4%, #D0E8FB 5%, #5BB0F3 6%, #8AC7F7 7%, #2D9AF0 8%, #B9DDFA 54%, #EDC50C 55%, #E9C108 71%, #ECC008 78%,  91%, #E9BD06 93%, #E8BC06 100%) repeat scroll 0% 0%;
 	border: none;
 	border-radius: 0;
 	color: #5C4905;
@@ -266,7 +266,7 @@ body { overflow-x: hidden; }
 #hotelCarTabs > li > a:hover,
 #hotelCarTabs > li > a:focus {
 	border: none;
-	background: #F9E58B;
+	background: #168FEF;
 }
 #hotelCarTabs > li.active > a, 
 #hotelCarTabs > li.active > a:focus, 
@@ -628,9 +628,9 @@ hr { border-top: 1px solid #111010; }
 	width: 100%;
 }
 .tm-submit-btn {
-	background: #f5d11d; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
-	background: linear-gradient(to bottom,  #f5d11d 0%,#f3d10e 1%,#efcf1c 2%,#fccd0d 4%,#f7ca0d 5%,#f9cb1e 6%,#f7cb10 7%,#f8cc14 8%,#f0c40c 54%,#edc50c 55%,#e9c108 71%,#ecc008 78%,#e6be06 91%,#e9bd06 93%,#e8bc06 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5d11d', endColorstr='#e8bc06',GradientType=0 ); /* IE6-9 */
+	background: #2d9af0; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+	background: linear-gradient(to bottom,  #2d9af0 0%,#1380d7 1%,#168fef 2%,#44a5f2 4%,#d0e8fb 5%,#5bb0f3 6%,#8ac7f7 7%,#2d9af0 8%,#b9ddfa 54%,#edc50c 55%,#e9c108 71%,#ecc008 78%, 91%,#e9bd06 93%,#e8bc06 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d9af0', endColorstr='#e8bc06',GradientType=0 ); /* IE6-9 */
 	width: 100%;
 	border: none;
 	height: 40px;
@@ -639,7 +639,7 @@ hr { border-top: 1px solid #111010; }
 	font-size: 12px;
 	font-weight: 600;
 }
-.tm-submit-btn:hover { background: #f5d11d; }
+.tm-submit-btn:hover { background: #2d9af0; }
 .contact-social { margin-top: 20px; }
 .contact-social .fa { color: white; }
 .tm-social-facebook { background-color: #4A7DBB; }
