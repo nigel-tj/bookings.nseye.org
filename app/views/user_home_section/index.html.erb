@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Admin Section</title>
+  <title>Rehoboth Admin Section</title>
   <!-- Bootstrap core CSS-->
   <link href="/admin_theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -385,12 +385,7 @@
           <hr class="mt-2">
           <div class="card-columns">
             <!-- Example Social Card-->
-            <%= @places_feed.each do |place| %>
-              <%= place.name %>
-              <%= image_tag(place.icon)%>
-              <%= place.photos %>
-              
-            <% end %>
+           
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
